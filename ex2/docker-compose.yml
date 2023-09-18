@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  dhcp-server:
+    build:
+      context: . 
+    networks:
+      arthur:
+        ipv4_address: 192.168.1.102
+    privileged: true
+
+networks:
+  arthur:
+    driver: bridge
+    external: true
+    

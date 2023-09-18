@@ -1,0 +1,14 @@
+$TTL    604800
+@       IN      SOA     arthur.ic.ufmt.br. admin.arthur.ic.ufmt.br. (
+                   2023082501 ; Serial
+                   604800     ; Refresh
+                   86400      ; Retry
+                   2419200    ; Expire
+                   604800 )   ; Negative Cache TTL
+;
+@       IN      NS      ns.arthur.ic.ufmt.br.
+@       IN      A       192.168.1.1
+ns      IN      A	192.168.1.1
+www	IN	A	192.168.1.1
+ftp	IN	A	192.168.1.1
+

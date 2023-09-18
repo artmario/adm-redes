@@ -1,0 +1,28 @@
+version: '3'
+services:
+  ftp-server:
+    image: fauria/vsftpd
+    ports:
+      - "20:20"
+      - "21:21"
+      - "21100-21110:21100-21110"
+    volumes:
+      - ./html:/home/vsftpd
+    environment:
+      - FTP_USER=aluno
+      - FTP_PASS=123456
+      - PASV_ADDRESS=192.168.18.218
+      - PASV_MIN_PORT=21100
+      - PASV_MAX_PORT=21110
+  apache-server:
+    image: httpd:2.4
+    ports:
+      - "9001:80"
+    volumes:
+      - ./html:/var/www/html
+    depends_on:
+      - ftp-server
+volumes:
+  html:
+  
+
